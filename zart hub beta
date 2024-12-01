@@ -1,0 +1,18 @@
+
+Sleep, 30000
+
+; Cria uma GUI com largura 255 e altura 150
+Gui, Add, Text,, Esta é a sua interface!
+Gui, Add, Button, gPrint, Imprimir
+Gui, Show, w255 h150, Zart Hub
+return
+
+FileSelectFile, SelectedFile, 3, , Selecione um arquivo para imprimir, Text Documents (*.txt)
+if SelectedFile
+{
+    Run, notepad.exe /p "%SelectedFile%"
+}
+return
+
+GuiClose:
+ExitApp
